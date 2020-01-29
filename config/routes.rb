@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages, only: [:new, :create]
   get 'main/index'
 
   root 'main#index'

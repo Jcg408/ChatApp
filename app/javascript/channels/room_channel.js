@@ -2,7 +2,7 @@ import consumer from "./consumer"
 
 consumer.subscriptions.create("RoomChannel", {
   connected() {
-    // Called when the subscription is ready for use on the server
+   console.log('Active')
   },
 
   disconnected() {
@@ -10,6 +10,8 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
+    $('#message').append("<div class='message'>"+ data.content + "</div>")
+   
     // Called when there's incoming data on the websocket for this channel
   }
 });
